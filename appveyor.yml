@@ -1,0 +1,20 @@
+version: "{build}"
+skip_tags: true
+clone_folder: c:\gopath\src\github.com\qiqizjl\wechatTokenServer
+clone_depth: 1
+
+environment:
+  GOPATH: c:\gopath
+  GOVERSION: master
+
+build: false
+deploy: false
+
+install:
+  - go build -v
+
+notifications:
+  - provider: Email
+    to:
+      - qiqizjl@qq.com
+    on_build_success: false
